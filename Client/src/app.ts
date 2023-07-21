@@ -1,5 +1,6 @@
 import mqtt from 'mqtt';
-const client = mqtt.connect('mqtt://localhost:1883');
+//const server = mqtt.connect('mqtt://localhost:1883');
+const client = mqtt.connect('mqtt://192.168.1.114:1883');
 
 client.on('connect', () => {
     console.log('connected');
@@ -10,6 +11,10 @@ client.on('connect', () => {
             console.log('subscribe error');
         }
     });
+});
+
+client.on('disconnect', () => {
+    console.log('disconnected');
 });
 
 client.on('message', (topic, message) => {

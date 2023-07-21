@@ -1,5 +1,6 @@
 import mqtt from 'mqtt';
-const server = mqtt.connect('mqtt://localhost:1883');
+//const server = mqtt.connect('mqtt://localhost:1883');
+const server = mqtt.connect('mqtt://192.168.1.114:1883');
 
 server.on('connect', () => {
     console.log('connected');
